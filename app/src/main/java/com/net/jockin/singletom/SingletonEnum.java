@@ -7,11 +7,11 @@ package com.net.jockin.singletom;
  */
 
 public class SingletonEnum {
-    private enum MySingletonEnum {
+    private enum LazyHolder {
         INSTANCE;
         private SingletonEnum singletonEnum;
 
-        private MySingletonEnum() {
+        private LazyHolder() {
             singletonEnum = new SingletonEnum();
         }
 
@@ -21,7 +21,7 @@ public class SingletonEnum {
     }
 
     public static SingletonEnum getInstance() {
-        return MySingletonEnum.INSTANCE.getInstance();
+        return LazyHolder.INSTANCE.getInstance();
     }
 
 }
